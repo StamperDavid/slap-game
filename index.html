@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <!--the function of the container is solely to hold all elements of game in one place-->
+  <div class="container" id="main-container">
+    <!--add background image to row-->
+    <div class="row" id="row-solo">
+
+      <!--add a card for each player i.e. player and computer-->
+      <div class="col-12 col-md-6">
+        <!--Image place holders, something like a silhouette for now will hold players Health indicator somewhere-->
+        <div class="card">
+          <img class="card-img-top" src="assets/pics/Silhouette1.jpg">
+          <div class="container" id="card-container">
+            <div class="row">
+              <button class="btn-danger" id="btn-punch">punch</button>
+              <button class="btn-danger" id="btn-kick">kick</button>
+              <button class="btn-danger" id="btn-slap">slap</button>
+            </div>
+            player name
+            <p>players general information</p>
+            <p>players general information</p>
+          </div>
+        </div>
+      </div>
+      <!--Image place holders, something like a silhouette for now will hold computers health indicator somewhere-->
+      <!--onclick input the players choice of attack and its numerical value to computer, onclick will also automaticly decide the computers input "attack/defend etc." using Math.floor(Math.random)*10 and update the health values of each-->
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <img class="card-img-top" src="assets/pics/Silhouette2.jpg">
+          <div class="container" id="card-container">
+            Computers evil villain name
+            <p>opponents general information</p>
+            <p>opponents general information</p>
+            <p>opponents general information</p>
+          </div>
+
+        </div>
+        <!--onclick will also automaticly decide the computers input "attack/defend etc." using Math.floor(Math.random)*10-->
+      </div>
+
+
+
+
+    </div>
+  </div>
+</body>
+
+</html>

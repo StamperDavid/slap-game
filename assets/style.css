@@ -1,0 +1,15 @@
+#row-solo {
+  background-color:orange;
+  height: auto;
+  padding-top:1rem;
+  padding-bottom:2rem;
+}
+#card-container{
+  background-color:rgb(94, 91, 91);
+  align-content: center;
+}
+.btn{
+  color: white;
+}
+
+
