@@ -1,5 +1,7 @@
 #row-solo {
   background-image:url("https://media.giphy.com/media/kKfMgvj4N9itG/giphy.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
   justify-content: center;
   max-height: fit-content;
   padding-top:1rem;
