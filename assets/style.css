@@ -1,16 +1,20 @@
 #row-solo {
   background-color:orange;
-  height: auto;
+  justify-content: center;
+  max-height: fit-content;
   padding-top:1rem;
-  padding-bottom:2rem;
+  padding-bottom:1rem;
 }
 #card-container{
   background-color:rgb(94, 91, 91);
-  align-content: center;
+  
+  justify-items: center;
   color: white;
 }
 .btn{
   color: white;
 }
+
+
 
 

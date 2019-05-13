@@ -17,39 +17,26 @@
     <!--add background image to row-->
     <div class="row" id="row-solo">
 
-      <!--add a card for each player i.e. player and computer-->
-      <div class="col-12 col-md-6">
-        <!--Image place holders, something like a silhouette for now will hold players Health indicator somewhere-->
-        <div class="card">
+      <!--add a card for opponent and add actions to take against oppponent-->
+      <div class="col-lg-12 col-md-6 col-4">
+        <!--Image place holder, something like a silhouette for now will hold computers Health indicator somewhere-->
+        <div class="card" id="enemy-card">
           <img class="card-img-top" src="assets/pics/Silhouette1.jpg">
           <div class="container" id="card-container">
             <div class="row">
-              <button class="btn-danger" id="btn-punch">punch</button>
-              <button class="btn-danger" id="btn-kick">kick</button>
-              <button class="btn-danger" id="btn-slap">slap</button>
-              <button class="btn-primary" id="btn-heal">heal</button>
+              <button id="slap-button" class="btn btn-danger" onclick="slap()"> back hand!</button>
+              <button id="puch-button" class="btn btn-danger" onclick="punch()"> throat punch!</button>
+              <button id="kick-button" class="btn btn-danger" onclick="kick()"> kick ass!</button>
+              <button id="reset-button" class="btn btn-primary" onclick="reset()">try again</button>
             </div>
-            player name
-            <p>players general information</p>
-            <p>players general information</p>
-          </div>
-        </div>
-      </div>
-      <!--Image place holders, something like a silhouette for now will hold computers health indicator somewhere-->
-      <!--onclick input the players choice of attack and its numerical value to computer, onclick will also automaticly decide the computers input "attack/defend etc." using Math.floor(Math.random)*10 and update the health values of each-->
-      <div class="col-12 col-md-6">
-        <div class="card">
-          <img class="card-img-top" src="assets/pics/Silhouette2.jpg">
-          <div class="container" id="card-container">
-            <p>slap</p>
-            <p>punch</p>
-            <p>kick</p>
-            <p>heal</p>
-          </div>
+            <h6 id="enemy-name">object of your agression</h6>
+            <h6 id="posture">confident</h6>
+            <h6 id="health">100 hp</h6>
 
+          </div>
         </div>
-        <!--onclick will also automaticly decide the computers input "attack/defend etc." using Math.floor(Math.random)*10-->
       </div>
+
 
 
 

@@ -16,25 +16,25 @@ let enemy = [{
 //Space
 
 function slap() {
-  debugger
-  enemy[activeEnemy].health++ //decreases health count by 5
-  if (enemy[activeEnemy].health % enemy[activeEnemy].tolerance == 0) {
+
+  enemy[activeEnemy].health-- //decreases health count by 5
+  if (enemy[activeEnemy].health % enemy[activeEnemy].tolerance == 25) {
     enemy[activeEnemy].postureIndex++;
   }
   drawEnemy()
 }
 function punch() {
   debugger
-  enemy[activeEnemy].health++ //decreases health count by 10
-  if (enemy[activeEnemy].health % enemy[activeEnemy].tolerance == 0) {
+  enemy[activeEnemy].health-- //decreases health count by 10
+  if (enemy[activeEnemy].health % enemy[activeEnemy].tolerance == 25) {
     enemy[activeEnemy].postureIndex++;
   }
   drawEnemy()
 }
 function kick() {
   debugger
-  enemy[activeEnemy].health++ //decreases health count by 20
-  if (enemy[activeEnemy].health % enemy[activeEnemy].tolerance == 0) {
+  enemy[activeEnemy].health-- //decreases health count by 20
+  if (enemy[activeEnemy].health % enemy[activeEnemy].tolerance == 25) {
     enemy[activeEnemy].postureIndex++;
   }
   drawEnemy()
@@ -45,7 +45,7 @@ function kick() {
 /////////////////////////////////////end of character profile/////////////////////////////////////////////
 
 function drawEnemy() {
-  let postureindex = enemy[activeEnemy].postureIndex
+  var postureindex = enemy[activeEnemy].postureIndex
   document.getElementById("slap").innerText = enemy[activeEnemy].health
   document.getElementById("enemy-image").setAttribute("src", enemy[activeEnemy].images[postureindex])
   document.getElementById("posture").innerText = enemy[activeEnemy].posture[enemy[activeEnemy].postureIndex]
@@ -85,7 +85,7 @@ function setActiveEnemy(index) {
 
 function drawButtons() {
   //
-  let template = ''
+  var template = ''
   for (let i = 0; i < enemy.length; i++) {
     let enemy = i;
     template += `
