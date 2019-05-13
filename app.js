@@ -6,7 +6,7 @@ let enemy = {
   health: 100,
   postureIndex: 100,
   tolerance: 25,
-  images: ['', '', '', ''],
+  images: ['confident', '', '', ''],
   items: []
 }
 
@@ -24,7 +24,7 @@ let items = {
 function slap() {
   enemy.health -= 5 //decreases health count by 5
   if (enemy.health % enemy.tolerance == 0) {
-    enemy.postureIndex -= 5);
+    enemy.postureIndex -= 5;
   }
   drawEnemy()
 }
