@@ -4,16 +4,15 @@ let enemy = {
   name: "object of your agression",
   posture: ["confident", "healthy", "wounded", "defeated"],
   health: 100,
-  postureIndex: 100,
-  tolerance: 25,
-  images: ['confident', '', '', ''],
+  postureIndex: 0,
+  images: ['confident', 'healthy', 'wounded', 'defeated'],
   items: []
 }
 
 let items = {
-  block: { name: "block", modifier: 2, description: 'deflects most of damage from a strike!' },
-  dodge: { name: "dodge", modifier: 25, description: 'avoid all damage by avoiding strike' },
-  parry: { name: "parry", modifier: 5, description: 'parry to receive only a glancing bloow' }
+  block: { name: "block", modifier: 5, description: 'deflects little of damage from a strike!' },
+  dodge: { name: "dodge", modifier: 20, description: 'avoid all damage by avoiding strike' },
+  parry: { name: "parry", modifier: 8, description: 'parry to receive only a glancing bloow' }
 }
 //This
 //Is
@@ -22,26 +21,20 @@ let items = {
 //Space
 
 function slap() {
-  enemy.health -= 5 //decreases health count by 5
-  if (enemy.health % enemy.tolerance == 0) {
-    enemy.postureIndex -= 5;
-  }
+  enemy.health -= 5 - addMods() //decreases health count by 5
+  checkPosture();
   drawEnemy()
 }
 
 function punch() {
-  enemy.health -= 10 //decreases health count by 10
-  if (enemy.health % enemy.tolerance == 0) {
-    enemy.postureIndex -= 10;
-  }
+  enemy.health -= 10 - addMods()//decreases health count by 10
+  checkPosture();
   drawEnemy()
 }
 
 function kick() {
   enemy.health -= 25 - addMods() //decreases health count by 25
-  if (enemy.health % enemy.tolerance == 0) {
-    enemy.postureIndex -= 25;
-  }
+  checkPosture();
   drawEnemy()
 }
 
@@ -58,8 +51,18 @@ function dodge() {
 function parry() {
   enemy.items.push(items.parry)
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function checkPosture() {
+  if (enemy.health >= 75) {
+    enemy.postureIndex = 0;
+  } else if (enemy.health < 75 && enemy.health >= 50) {
+    enemy.postureIndex = 1
+  } else if (enemy.health < 50 && enemy.health >= 2) {
+    enemy.postureIndex = 2
+  } else if (enemy.health < 1) { enemy.postureIndex = 3 }
+}
 
-/////////////////////////////////////end of character profile//////////////////////////////////////////////////////
+/////////////////////////////////////end of character profile////////////////////////////////////////////////////////
 function addMods() {
   let modTotal = 0
   for (let i = 0; i < enemy.items.length; i++) {
